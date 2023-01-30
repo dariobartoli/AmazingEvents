@@ -1,0 +1,138 @@
+.color1 {
+    background-color: #CEB7B3;
+}
+
+.color2 {
+    background-color: #F7B2AD;
+}
+
+.color3{
+    color: rgb(0, 0, 0);
+    font-weight: 100;
+    background-color: #ffeceb;
+}
+
+.hover:hover {
+    background-color: #fd9088;
+}
+
+body {
+    background-color: #B7B7B7;
+}
+
+.img1 {
+    width: 3rem;
+}
+
+
+.textarea {
+    resize: none;
+}
+
+.submit {
+    width: 40%;
+}
+
+th {
+    border: 1px black solid;
+}
+
+.coltitulo {
+    text-align: center;
+    background-color: #CEB7B3;
+}
+
+.search1 {
+    border: 1px solid #F7B2AD;
+    color: black;
+}
+
+.search1:hover {
+    border: 1px solid #CEB7B3;
+    background-color: #F7B2AD;
+    color: black;
+}
+
+.img2 {
+    height: 200px;
+    object-fit: cover;
+}
+
+.showmore {
+    background-color: #F7B2AD;
+    color: black;
+    border: 1px solid #CEB7B3;
+}
+
+.showmore:hover {
+    background-color: #fd9088;
+    color: black;
+    border: 1px solid #CEB7B3;
+}
+header{
+    width: 80%;
+}
+.tituloPagina{
+    background-color: #CEB7B3;
+    width: 80%;
+    margin: 0.5rem;
+}
+main{
+    width: 80%;
+    min-height: 62vh;
+}
+footer{
+    width: 80%;
+}
+.tamaño{
+    width: 18rem;
+}
+.carta{
+    padding: 3rem;
+}
+.logoPagina{
+    width: 10rem;
+}
+
+.active{
+    font-weight: bold;
+}
+
+.formulario{
+    width: 700px;
+}
+
+@media screen and (max-width:991px){
+    .color2{
+        width: 6rem;
+    }
+    .formulario{
+        width: 350px;
+    }
+}
+
+@media screen and (max-width:475px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .tituloPagina, footer, main,header{
+        width: 100%;
+    }
+    #cardContainer{
+        width: 18rem;
+        padding: 0;
+    }
+    .img1{
+        width: 2.1rem;
+    }
+    #footer{
+        flex-direction: column;
+        gap: 1.9rem;
+    }
+    .logoPagina{
+        width: 7rem;
+    }
+    .formulario{
+        width: 280px;
+    }
+}

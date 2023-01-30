@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <link rel="shortcut icon" href="./assets/img/logo.png" type="image/x-icon">
+</head>
+<body class="d-flex flex-column align-items-center" id="app">
+    <header class="d-flex justify-content-between p-3 color1">
+        <div>
+          <img src="./assets/img/LogoAmazingEvents.png" alt="logo" class="logoPagina">
+        </div>
+        <nav class="navbar navbar-expand-lg rounded-pill color2">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav gap-5 p-1">
+                  <li class="nav-item">
+                    <a class="nav-link hover rounded-pill" aria-current="page" href="./index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link hover rounded-pill active" href="#">Upcoming Events</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link hover rounded-pill" href="./pastevents.html">Past Events</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link hover rounded-pill" href="./contacts.html">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link hover rounded-pill" href="./stats.html">Stats</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </nav>
+    </header>
+    <div class="tituloPagina d-flex justify-content-center align-items-center">
+      <h1 class="p-5 d-flex justify-content-centercolor1 mt-2" id="tituloPagina">Upcoming events</h1>
+    </div>
+    <main class="d-flex flex-column align-items-center bg-light">
+        <div class="d-flex justify-content-between align-items-center p-2 flex-wrap" style="width: 100%;">
+          <div class="d-flex gap-4 flex-wrap p-3" id="cajacheckbox">
+            <div v-for="categoria of categorias">
+              <input v-model="filtrocategorias" type="checkbox" name="category" :id="categoria" :value="categoria">
+              <label :for="categoria" name="category">{{categoria}}</label>
+            </div>
+            </div>
+            <nav class="navbar">
+                <div class="container-fluid">
+                  <form class="d-flex" role="search">
+                    <input v-model="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="myInput">
+                    <button class="btn btn-outline-success search1" type="submit" id="buttonSearch">Search</button>
+                  </form>
+                </div>
+            </nav>
+        </div>
+        <template class="d-flex flex-wrap gap-3 justify-content-center carta" id="cardContainer">
+          <div class="card shadow p-3 mb-5 bg-body rounded tamaño" v-for="evento of eventosFuturos">
+            <img :src="evento.image" class="card-img-top img2" :alt="evento.name">
+            <div class="card-body d-flex flex-column justify-content-between">
+              <h5 class="card-title">{{evento.name}}</h5>
+              <p class="card-text">{{evento.description}}</p>
+              <div class="d-flex justify-content-between">
+                  <p>${{evento.price}}</p>
+                  <a :href="'./details.html?id=' +evento._id" class="btn btn-primary showmore">show more</a>
+                </div>
+              </div>
+            </div>
+        </template>
+        <h2 v-show="eventosFuturos.length == 0">Upps! Not Found :(</h2>
+    </main>
+    {{filtroDobleFuturo}}
+
+    <footer class="d-flex justify-content-between p-4 color1" id="footer">
+        <div class="d-flex gap-3">
+            <a href="https://www.instagram.com/"><img src="./assets/img/instagram.png" alt="instagram" class="img1"></a>
+            <a href="https://www.facebook.com/"><img src="./assets/img/facebook.png" alt="facebook" class="img1"></a>
+            <a href="tel:+35124541849"><img src="./assets/img/whatsapp.png" alt="wsp" class="img1"></a>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+            <img src="./assets/img/mindhub.jpg" alt="mindhub" class="img1 rounded-circle">
+            <p class="fw-bold fs-5">Cohort 34</p>
+        </div>
+    </footer>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="./mainvue.js"></script>
+</body>
+</html>
